@@ -10,6 +10,17 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/:category/:subcategory', (req, res) => {
+    db.listing.find({subCategory: req.params.subcategory})
+    .then(listings => {
+        res.send(listings)
+    })
+    .catch(err => {
+        console.log(err)
+        res.send(err)
+    })
+})
+
 router.get('/:category', (req, res) => {
     db.listing.find({category: req.params.category})
     .then(listings => {
@@ -21,16 +32,7 @@ router.get('/:category', (req, res) => {
     })
 })
 
-router.get('/:category/:subcategory', (req, res) => {
-    db.listing.find({subCategory: req.params.subcategory})
-    .then(listings => {
-        res.send(listings)
-    })
-    .catch(err => {
-        console.log(err)
-        res.send(err)
-    })
-})
+
 
 router.post('/new', (req, res) => {
     console.log('Hitting Post')
