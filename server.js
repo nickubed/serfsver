@@ -20,4 +20,4 @@ app.get('*',(req, res) => {
     res.send('404')
 })
 
-app.listen(3001);
+app.listen(process.env.PORT || 3000)
