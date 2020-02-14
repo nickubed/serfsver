@@ -26,4 +26,9 @@ const listingSchema = new mongoose.Schema({
     }
 })
 
+listingSchema.pre('save', function(next, docs) {
+    this.category = this.category.toLowerCase()
+    this.subCategory = this.subCategory.toLowerCase()
+})
+
 module.exports = mongoose.model('Listing', listingSchema)
