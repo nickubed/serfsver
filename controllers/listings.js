@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/new', (req, res) => {
+    console.log('Hitting Post')
     db.listing.create(req.body)
     .then(listing => {
         res.send(listing)
