@@ -12,7 +12,7 @@ const listingSchema = new mongoose.Schema({
         type: String
     },
     price: {
-        type: Number
+        type: String
     },
     replyTo: {
         type: String
