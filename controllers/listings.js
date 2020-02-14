@@ -22,7 +22,7 @@ router.get('/:category', (req, res) => {
 })
 
 router.get('/:category/:subcategory', (req, res) => {
-    db.listing.find({subcategory: req.params.subcategory})
+    db.listing.find({subCategory: req.params.subcategory})
     .then(listings => {
         res.send(listings)
     })
